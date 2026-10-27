@@ -132,24 +132,33 @@
         return model.predict(input);
       });
       const probabilities = await output.data(); output.dispose();
-      let best = 0;
-      for (let i=1;i<probabilities.length;i++) if (probabilities[i] > probabilities[best]) best=i;
-      const confidence = Number(probabilities[best] || 0);
-      const label = labels[best] || `Class ${best}`;
-      const predCrop = labelCrop(label);
       const aliases = cropAliases[selectedCrop.toLowerCase()] || [];
-      if (!aliases.some(alias => predCrop.includes(alias) || alias.includes(predCrop))) {
-        showMessage('Crop mismatch — result withheld', `The top class (“${humanize(label)}”) does not match selected crop ${selectedCrop}. Check the crop selection and photo. Do not treat this as a diagnosis.`);
+      const cropResults = labels.map((label, index) => ({label, score:Number(probabilities[index] || 0), index}))
+        .filter(item => { const predCrop = labelCrop(item.label); return aliases.some(alias => predCrop.includes(alias) || alias.includes(predCrop)); })
+        .sort((a,b) => b.score - a.score);
+      if (!cropResults.length) {
+        showMessage('Crop not covered by this model', `The installed model has no labelled classes for ${selectedCrop}. Add verified images for this crop and retrain before using image predictions for it.`);
         return;
       }
+      const best = cropResults[0];
+      const confidence = best.score;
       resultBox.replaceChildren();
-      const title=document.createElement('b'); title.textContent='AI leaf scan · model prediction';
-      const pred=document.createElement('div'); pred.className='ai-prediction'; pred.textContent=humanize(label);
-      const badge=document.createElement('span'); badge.className='ai-confidence'; badge.textContent=`Model score: ${(confidence*100).toFixed(1)}%`;
-      const bar=document.createElement('div'); bar.className='ai-prediction-bar'; const fill=document.createElement('span'); fill.style.width=`${Math.max(0,Math.min(100,confidence*100))}%`; bar.append(fill);
-      const details=document.createElement('p'); details.textContent=confidence<0.60 ? 'The model score is low. Treat this as uncertain; retake a clear photo in natural light and consult a local agriculture expert.' : 'This is the model’s top class, not a calibrated probability or confirmed diagnosis. Similar-looking conditions and field photos may cause errors.';
-      const caution=document.createElement('div'); caution.className='ai-caution'; caution.textContent='Do not apply pesticide or fertilizer based only on this prediction. Confirm the issue with a KVK/agriculture officer or validated plant diagnostic service.';
-      resultBox.append(title,pred,badge,bar,details,caution);
+      const title=document.createElement('b'); title.textContent=`AI leaf scan · ${selectedCrop} disease class scores`;
+      const intro=document.createElement('p'); intro.className='ai-score-note'; intro.textContent='Ranked results for classes this model knows for the selected crop. Higher score means a stronger model match; these percentages are NOT calibrated disease probabilities.';
+      const pred=document.createElement('div'); pred.className='ai-prediction'; pred.textContent=`Highest-scoring match: ${humanize(best.label)}`;
+      const list=document.createElement('div'); list.className='ai-disease-list';
+      cropResults.forEach((item, rank) => {
+        const row=document.createElement('div'); row.className='ai-disease-row';
+        const head=document.createElement('div'); head.className='ai-disease-head';
+        const name=document.createElement('span'); name.className='ai-disease-name'; name.textContent=`${rank+1}. ${humanize(item.label).split(' — ').slice(1).join(' — ') || humanize(item.label)}`;
+        const score=document.createElement('strong'); score.textContent=`${(item.score*100).toFixed(1)}%`;
+        head.append(name,score);
+        const bar=document.createElement('div'); bar.className='ai-prediction-bar'; const fill=document.createElement('span'); fill.style.width=`${Math.max(0,Math.min(100,item.score*100))}%`; bar.append(fill);
+        row.append(head,bar); list.append(row);
+      });
+      const details=document.createElement('p'); details.className='ai-score-note'; details.textContent=confidence<0.60 ? 'The highest model score is low. Treat this scan as uncertain; retake a clear photo in natural light and consult a local agriculture expert.' : 'The first result is the model’s strongest match, not a confirmed diagnosis. Similar-looking conditions and real-field photos can cause errors.';
+      const caution=document.createElement('div'); caution.className='ai-caution'; caution.textContent='Do not apply pesticide or fertilizer based only on these scores. Confirm the issue with a KVK/agriculture officer or validated plant diagnostic service.';
+      resultBox.append(title,intro,pred,list,details,caution);
       saveProfile();
     } catch (error) {
       console.error('Crop AI prediction failed:',error);
