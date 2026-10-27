@@ -1,22 +1,79 @@
-# Agriculture — Autonomous Farm Operations (HTML, CSS & JavaScript)
+# AgroPilot AI — Autonomous Farm Operations
 
-A browser-ready frontend demo. It does not require Python, Flask, a database server, or npm.
+A responsive HTML/CSS/JavaScript hackathon prototype for connected farm decision support. Runs locally in a browser; no build tools are required.
 
-## Run in VS Code
-1. Extract this ZIP.
-2. Open the `agriculture-autonomous-farm-html-css-js` folder in VS Code.
-3. Open `index.html` with the **Live Server** extension, or double-click `index.html` to open it in your browser.
-4. Internet access is needed for the live Open-Meteo weather request and Google Fonts. If weather cannot load, the app displays clearly labelled sample values.
+## Run locally
+1. Extract the ZIP.
+2. Open the `agriculture-project-updated` folder in VS Code.
+3. Open `index.html` with Live Server (recommended) or in a browser.
+4. Internet is needed for live Open-Meteo forecast and Google Fonts. Other demo features run locally.
 
 ## Features
-- Farm records: add farms and save them in browser `localStorage`.
-- Crop recommendation: starter rule-based ranking using pH, temperature, season, soil and water.
-- Crop health check: symptom-based possible causes and suggested observations.
-- Weather: Open-Meteo forecast attempt with an offline sample fallback.
-- Market prices: clearly labelled illustrative prices, not live mandi rates.
-- Farming assistant: rule-based responses, not an LLM.
-- Operations planner: suggested tasks based on moisture and rain probability, with a local activity log.
-- Responsive layout adapted from the supplied project.
+- Dashboard overview and inspirational farmer message
+- Multiple farm records saved in browser local storage
+- Rule-based crop recommendation shortlist
+- Expanded crop root-cause triage using crop, moisture, rain, leaf symptoms, growth stage, symptom spread, root/stem condition, pest signs and irrigation history; ranks possible causes with evidence and next checks
+- Live weather forecast via Open-Meteo when reachable, with clearly labelled demo fallback
+- Sample mandi price table and selling checklist
+- Rule-based farming assistant with optional browser speech input/output
+- Operations planner and local activity log
+- **Autonomous Decision Engine:** combines crop condition, moisture, rain probability and growth stage to explain and rank suggested actions
+- **Water & Profit Simulator:** calculates estimated revenue, entered costs, net return and break-even price; includes qualitative irrigation guidance
+- **Field Health Zones:** interactive illustrative zone map with inspection notes and activity logging
+- Mobile responsive layout
 
-## Important limitations
-This is a frontend demo, not a validated agricultural diagnostic system. Recommendations are indicative only. Weather depends on internet access. Market prices are sample data. Browser-local records stay in the same browser/device and are not shared across devices. The planner never controls pumps, sprays chemicals, buys supplies, or performs real-world actions.
+## Important demo boundaries
+- Crop recommendations and root-cause suggestions are transparent heuristic/rule-based triage, not a trained AI diagnosis and not calibrated probabilities. The ranking is a clue-match score only.
+- The leaf photo is only previewed in the browser; no image AI model is connected. For real image-based disease detection, train or fine-tune a crop-specific model, validate it on field images, and connect inference through a backend/API.
+- Field zones and sample crop-health indicators are fictional demonstration data, not satellite or sensor readings.
+- Market prices are sample values, not live mandi prices.
+- Profit outputs use only the numbers entered by the user; actual yield, price and costs may differ.
+- Weather is fetched from Open-Meteo when internet is available. Forecasts are not field sensor readings.
+- Voice features depend on browser support and permissions.
+- The app does not autonomously control pumps, apply chemicals, buy supplies or execute real-world actions. Human review is required.
+
+## Files
+- `index.html` — page structure and navigation
+- `style.css` — responsive dashboard styling
+- `app.js` — client-side demo logic
+- `farm-hero.jpg` — dashboard hero image
+
+## Nearby Agricultural Shops (Google Maps)
+
+The **Nearby agri shops** section lets a farmer enter a village/town, district, state, and crop, then search Google Maps for nearby:
+
+- Seed shops
+- Fertilizer and nutrient suppliers
+- Crop-protection shops
+- Farm machinery and equipment dealers
+- Irrigation and pump suppliers
+- Soil-testing laboratories
+- Plant nurseries
+- Krishi Vigyan Kendra (KVK) / agriculture offices
+
+These are location-specific Google Maps search links, so current business listings and map results are provided by Google Maps. The prototype does not fetch or verify shop listings inside the dashboard, and it cannot guarantee inventory, opening hours, or the absolute nearest shop. A Google Places API integration with a secured backend/API key would be needed to display live shop names, distance, ratings, and phone numbers directly inside AgroPilot.
+
+
+## Additional farmer support modules
+
+This update adds five interactive modules while preserving the existing dashboard:
+
+- **Crop Recovery Tracker:** records follow-up observations, farmer-reported condition, action and notes in browser local storage.
+- **Soil Health Advisor:** provides a cautious checklist from entered pH, moisture and symptoms; it does not prescribe fertilizer doses.
+- **Yield & Risk Simulator:** calculates low/baseline/high illustrative yield and revenue scenarios from user-provided estimates. Scenario ranges are assumptions, not model predictions.
+- **Smart Farm Calendar:** adds, completes and deletes dated tasks saved in the current browser.
+- **Government Schemes & Expert Help:** links to selected official portals and creates a Google Maps search for local KVKs, soil labs or other help based on village/district/state.
+
+### Important limitations
+
+These added modules are frontend decision-support tools, not trained AI models. Recovery history and calendar tasks stay in the current browser/device and are not synced to a server. Google Maps results are search links, not a verified list of the nearest businesses. Scheme eligibility and deadlines must be confirmed on official portals. Yield ranges are illustrative assumptions. Soil and crop-health guidance should be verified with a soil test or local agriculture expert before costly or chemical treatment decisions.
+
+## Run locally
+
+Open `index.html` with VS Code Live Server. Most local forms work in a modern browser. Weather requires an internet connection to retrieve live Open-Meteo forecast data; the app shows a clearly labelled sample fallback if the request fails.
+
+## Login and logout (prototype)
+- New users can create an account with name, email and password; existing users can log in and log out.
+- Passwords are stored as SHA-256 digests in this browser's local storage, and the signed-in session is held in session storage. This is suitable only for a local demo, not a secure production identity system.
+- Browser storage can be cleared or edited, and client-side checks can be bypassed. Do not use real/reused passwords or sensitive farmer data. For a production release, use a backend or trusted identity provider (for example Firebase Authentication or Supabase Auth), enforce server-side authorization, and protect farm records per account.
+- Run with VS Code Live Server for the most reliable browser crypto support.
