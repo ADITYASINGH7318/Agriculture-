@@ -1,8 +1,13 @@
 {
-  "name": "agropilot-ai-local-backend",
+  "name": "agropilot-ai-backend",
   "version": "1.0.0",
   "private": true,
-  "description": "Dependency-free local API and JSON persistence for AgroPilot AI prototype",
-  "scripts": { "start": "node server.js", "check": "node --check server.js && node --check app.js && node --check crop-ai.js" },
-  "engines": { "node": ">=18" }
+  "description": "AgroPilot AI API backend",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }

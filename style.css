@@ -243,4 +243,231 @@ body{background:#f2f8f6;color:#12352e}
 @media(max-width:740px){.photo-action-row{flex-direction:column}.photo-action-row .outline-btn{width:100%;min-width:0}.form-section-intro{padding:12px}.photo-upload-panel{padding:12px}}
 .farm-detail-summary{padding:13px;border:1px solid #d5e8dc;border-radius:11px;background:#f4fbf6}.farm-detail-summary>b{display:block;font-size:11px;color:#155b40;margin-bottom:6px}.farm-detail-summary p{font-size:10px;line-height:1.7;color:#456458;margin:0}.farm-detail-summary small{display:block;font-size:9px;color:#7b8b80;margin-top:6px}
 
-.ai-disease-list{display:grid;gap:8px;margin:10px 0;max-height:360px;overflow:auto;padding-right:3px}.ai-disease-row{border:1px solid #e0ebe2;background:#fff;border-radius:8px;padding:9px 10px}.ai-disease-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;font-size:11px}.ai-disease-name{font-weight:700;color:var(--ink,#243b30);line-height:1.5}.ai-disease-head strong{white-space:nowrap;color:var(--green-dark);font-size:12px}.ai-score-note{margin:6px 0!important;font-size:10px!important;line-height:1.65!important}
+/* Personalized My Farm profile and government scheme roadmap */
+.form-hint{font-size:10px;line-height:1.6;color:var(--muted);margin:14px 0 0}.personalized-plan{margin-top:16px;padding:22px}.personalized-plan-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.personalized-plan-head h3{font:700 18px Manrope,sans-serif;letter-spacing:-.4px;margin:7px 0}.personalized-plan-head p{font-size:11px;line-height:1.6;color:var(--muted);max-width:720px;margin:0}.farm-select-label{display:grid;gap:7px;min-width:220px;font-size:10px;font-weight:700;color:#5d6c61}.farm-select-label select{width:100%;border:1px solid #dfe6df;background:#fff;border-radius:7px;padding:11px 10px;color:#33443a;font-size:11px}.farm-profile-summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px;border:1px solid #dfece0;border-radius:10px;background:#f7fbf7}.farm-profile-summary h4{font:700 16px Manrope,sans-serif;margin:5px 0}.farm-profile-summary p{font-size:11px;color:var(--muted);margin:0 0 8px}.scheme-match-note{margin:13px 0;padding:12px 14px;border-radius:8px;background:#fff6e9;border:1px solid #f4e5c8;color:#81643a;font-size:10px;line-height:1.65}.farm-scheme-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.farm-scheme-card{border:1px solid #e5ece5;border-radius:10px;padding:15px;min-width:0}.farm-scheme-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.scheme-number{font:800 12px Manrope;color:#9ba79e}.farm-scheme-card h4{font:700 14px Manrope,sans-serif;margin:12px 0 8px}.farm-scheme-card>p,.farm-scheme-action p,.farm-scheme-card details p{font-size:10px;line-height:1.65;color:#6f7d72;margin:0}.farm-scheme-action{background:#f5f9f4;border-radius:7px;padding:10px;margin:12px 0}.farm-scheme-action b{font-size:10px;color:#355e42;display:block;margin-bottom:4px}.farm-scheme-card details{border-top:1px solid #edf0eb;padding:10px 0;font-size:10px}.farm-scheme-card summary{font-weight:700;color:#4e6555;cursor:pointer}.farm-scheme-card details p{margin-top:8px}.farm-scheme-card ol{margin:8px 0 0;padding-left:17px;color:#6f7d72;font-size:10px;line-height:1.7}.farm-scheme-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:9px}.farm-scheme-links .text-btn{padding:8px 3px}.farm-roadmap-footer{border-top:1px solid var(--line);margin-top:18px;padding-top:16px}.farm-roadmap-footer h4{font:700 14px Manrope,sans-serif;margin:0 0 10px}.farm-roadmap-footer ol{padding-left:18px;margin:0;color:#68776d;font-size:10px;line-height:1.8}.farm-roadmap-footer p{font-size:10px;color:var(--muted);line-height:1.7;margin-bottom:0}.farm-roadmap-footer a{color:var(--green);font-weight:700}
+@media(max-width:900px){.personalized-plan-head,.farm-profile-summary{flex-direction:column;align-items:stretch}.farm-select-label{min-width:0}.farm-scheme-grid{grid-template-columns:1fr}}
+
+.farm-map-panel{display:grid;grid-template-columns:minmax(250px,.8fr) minmax(0,1.2fr);gap:18px;padding:16px;margin:14px 0;border:1px solid #dfece0;border-radius:12px;background:#f8fbf8}.farm-map-copy h4{font:700 15px Manrope,sans-serif;margin:7px 0}.farm-map-copy p{font-size:11px;line-height:1.7;color:var(--muted);margin:0 0 12px}.farm-map-copy small{display:block;color:var(--muted);font-size:10px;line-height:1.6;margin-top:12px}.farm-map-actions{display:flex;gap:8px;flex-wrap:wrap}.farm-map-actions a{font-size:10px;text-decoration:none}.farm-google-map{display:block;width:100%;height:270px;border:0;border-radius:9px;background:#edf2ed}@media(max-width:700px){.farm-map-panel{grid-template-columns:1fr}.farm-google-map{height:240px}}
+
+/* Expanded personalized crop shortlist */
+.recommend-layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:22px;align-items:start}
+.recommend-form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.form-section-intro{grid-column:1/-1;padding:12px 14px;border-radius:12px;background:var(--surface-soft,#f3f7f1);display:flex;flex-direction:column;gap:4px;margin-top:5px}
+.form-section-intro b{font-size:.91rem}.form-section-intro small{color:var(--muted,#68766d);line-height:1.45}
+.recommend-submit,.full-span{grid-column:1/-1}
+.recommend-results-panel{position:sticky;top:18px;max-height:calc(100vh - 36px);overflow:auto}
+.shortlist-summary{padding:14px;border-radius:14px;background:var(--surface-soft,#f3f7f1);margin-bottom:16px}
+.shortlist-summary h4{font-size:1.08rem;margin:5px 0 10px}.shortlist-summary p{font-size:.86rem;color:var(--muted,#68766d);line-height:1.5;margin:10px 0 0}
+.shortlist-card{align-items:flex-start}.shortlist-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
+.shortlist-facts>div{padding:10px;border:1px solid var(--border,#e1e8df);border-radius:10px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.shortlist-facts small{font-size:.74rem;color:var(--muted,#68766d);line-height:1.35}.shortlist-facts b{font-size:.88rem;overflow-wrap:anywhere}
+.shortlist-card details{margin:10px 0;padding:10px;border-radius:10px;background:var(--surface-soft,#f3f7f1);font-size:.85rem}
+.shortlist-card details summary{cursor:pointer;font-weight:650}.shortlist-card details ul{padding-left:19px;line-height:1.55}.shortlist-map-link{display:inline-flex;margin-top:5px;font-size:.8rem}
+.shortlist-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.result-disclaimer{font-size:.79rem;line-height:1.55;color:var(--muted,#68766d)}
+@media(max-width:1000px){.recommend-layout{grid-template-columns:1fr}.recommend-results-panel{position:static;max-height:none}}
+@media(max-width:620px){.recommend-form-grid{grid-template-columns:1fr}.recommend-form-grid>label,.recommend-form-grid .form-section-intro,.recommend-submit,.full-span{grid-column:1}.shortlist-facts{grid-template-columns:1fr 1fr}}
+@media print{body *{visibility:hidden!important}#recommend-results,#recommend-results *{visibility:visible!important}#recommend-results{position:absolute;left:0;top:0;width:100%;max-height:none;overflow:visible}#save-recommendation,#print-recommendation,.shortlist-map-link{display:none!important}}
+
+/* Official mandi lookup panel */
+.market-live-search{margin-top:24px;padding-top:20px;border-top:1px solid var(--line,#e4e8e1)}
+.market-live-search .form-grid{margin-top:12px}
+.market-live-search .shop-category-grid{margin-top:14px}
+.market-live-search .shop-category-card{min-width:0}
+
+/* Advanced Crop Health toolkit */
+.crop-health-advanced{margin-top:20px}.crop-health-advanced>.panel-heading{align-items:flex-start}.crop-health-advanced .full-width-label{grid-column:1/-1}.compare-photo-inputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.compare-photo-inputs label{display:flex;flex-direction:column;gap:8px}.compare-photo-inputs input{max-width:100%;font-size:.85rem}.health-photo-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.health-photo-compare>div{min-width:0;border:1px solid var(--line,#dce7df);border-radius:12px;padding:10px;background:var(--surface,#fff)}.health-photo-compare img{display:block;width:100%;max-height:220px;object-fit:contain;border-radius:8px;margin-top:8px;background:#f4f7f4}.health-photo-compare>small,.health-photo-compare>.field-help{grid-column:1/-1;color:var(--muted,#68776d)}.health-report-results{margin-top:18px}.health-score-card{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px;border-radius:16px;background:linear-gradient(120deg,#edf8ef,#f7fbf7);border:1px solid #d4e9d8}.health-score-number{font-size:2.7rem;font-weight:800;line-height:1.2;color:#17653a}.health-score-number small{font-size:1rem;color:#557361}.health-score-card p{max-width:380px;color:#52665a}.health-report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}.health-report-grid section,.health-report-notes{border:1px solid var(--line,#dce7df);border-radius:14px;padding:16px}.health-report-grid h4,.health-report-notes h4{margin:0 0 10px}.health-report-grid li{margin:8px 0;line-height:1.5}.health-report-notes{margin-top:14px}.health-history-heading{margin-top:26px}.health-report-history .decision-card{margin-bottom:12px}.health-report-print .shortlist-actions{margin-top:16px}.health-report-print .result-disclaimer{margin-top:14px}@media(max-width:700px){.compare-photo-inputs,.health-photo-compare,.health-report-grid{grid-template-columns:1fr}.health-score-card{align-items:flex-start;flex-direction:column}.crop-health-advanced .full-width-label{grid-column:auto}}
+@media print{body *{visibility:hidden!important}.health-report-print,.health-report-print *{visibility:visible!important}.health-report-print{position:absolute;inset:0;width:100%;background:white;color:black;padding:20px}.health-report-print .shortlist-actions,.health-report-print button{display:none!important}}
+
+
+/* AgroPilot dashboard motion layer — visual-only; no content or data changed */
+@keyframes ap-dashboard-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ap-soft-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+@keyframes ap-sun-breathe {
+  0%, 100% { transform: scale(1); opacity: .82; }
+  50%      { transform: scale(1.08); opacity: 1; }
+}
+@keyframes ap-field-drift {
+  0%, 100% { transform: translate3d(0,0,0) rotate(0deg); }
+  50%      { transform: translate3d(-8px,-3px,0) rotate(-1deg); }
+}
+@keyframes ap-orbit-drift {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -9px; }
+}
+@keyframes ap-leaf-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(38,145,80,0)); }
+  50%      { filter: drop-shadow(0 5px 10px rgba(38,145,80,.14)); }
+}
+@keyframes ap-status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,145,89,.16); }
+  50%      { box-shadow: 0 0 0 5px rgba(34,145,89,0); }
+}
+
+/* Entrance animation replays naturally when the user opens a dashboard section. */
+.view.active > .hero,
+.view.active > .stats-grid,
+.view.active > .dashboard-showcase,
+.view.active > .content-grid,
+.view.active > .section-heading,
+.view.active > .panel,
+.view.active > .recommend-layout,
+.view.active > .recommend-head,
+.view.active > .health-report-results,
+.view.active > .crop-health-advanced {
+  animation: ap-dashboard-enter .62s cubic-bezier(.2,.7,.25,1) both;
+}
+.view.active > .stats-grid { animation-delay: .08s; }
+.view.active > .dashboard-showcase { animation-delay: .14s; }
+.view.active > .content-grid { animation-delay: .18s; }
+
+.farm-stats .stat-card {
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.farm-stats .stat-card:nth-child(1) { animation: ap-dashboard-enter .55s .10s both; }
+.farm-stats .stat-card:nth-child(2) { animation: ap-dashboard-enter .55s .17s both; }
+.farm-stats .stat-card:nth-child(3) { animation: ap-dashboard-enter .55s .24s both; }
+.farm-stats .stat-card:nth-child(4) { animation: ap-dashboard-enter .55s .31s both; }
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(32,64,44,.10);
+  border-color: #c9dfd0;
+}
+.panel {
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(32,64,44,.075);
+  border-color: #d3e5d8;
+}
+.nav-item { transition: background .22s ease, color .22s ease, transform .22s ease; }
+.nav-item:hover { transform: translateX(3px); }
+.primary-btn, .outline-btn, .text-btn, .dark-action {
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.primary-btn:hover, .dark-action:hover { transform: translateY(-2px); filter: brightness(1.035); }
+.primary-btn:active, .outline-btn:active, .dark-action:active { transform: translateY(0) scale(.985); }
+
+.hero-photo .hero-art {
+  isolation: isolate;
+  background-size: 120% 120%;
+  animation: ap-leaf-glow 7s ease-in-out infinite;
+}
+.hero-photo .field-sun { animation: ap-sun-breathe 5s ease-in-out infinite; transform-origin: center; }
+.hero-photo .field-row.row-one { animation: ap-field-drift 8s ease-in-out infinite; }
+.hero-photo .field-row.row-two { animation: ap-field-drift 10s ease-in-out infinite reverse; }
+.hero-photo .field-row.row-three { animation: ap-field-drift 12s ease-in-out infinite; }
+.hero-photo .orbit-one { animation: ap-orbit-drift 4.8s ease-in-out infinite; }
+.hero-photo .orbit-two { animation: ap-orbit-drift 5.5s ease-in-out .5s infinite; }
+.hero-photo .orbit-three { animation: ap-orbit-drift 4.3s ease-in-out .9s infinite; }
+.hero-photo .orbit-four { animation: ap-orbit-drift 6s ease-in-out .2s infinite; }
+.hero-photo .field-caption { animation: ap-dashboard-enter .9s .25s both; }
+.health-donut { animation: ap-leaf-glow 5.5s ease-in-out infinite; }
+.status-tag, .online-dot { animation: ap-status-pulse 3s ease-in-out infinite; }
+.dashboard-showcase .panel:nth-child(1) { animation: ap-dashboard-enter .65s .12s both; }
+.dashboard-showcase .panel:nth-child(2) { animation: ap-dashboard-enter .65s .22s both; }
+.dashboard-showcase .panel:nth-child(3) { animation: ap-dashboard-enter .65s .32s both; }
+
+/* Keep animations comfortable and accessible for reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Login redesign inspired by the user's CropsDex reference. App data and auth handlers remain unchanged. */
+.auth-screen{grid-template-columns:minmax(250px,.78fr) minmax(350px,1.22fr);gap:10px;padding:4.2vh 5vw;background-color:#b7e3a1;background-image:radial-gradient(ellipse at 8% 14%,rgba(43,108,24,.72) 0 3%,transparent 3.5%),radial-gradient(ellipse at 92% 16%,rgba(28,91,35,.75) 0 4%,transparent 4.5%),radial-gradient(ellipse at 18% 88%,rgba(57,133,38,.6) 0 5%,transparent 5.5%),radial-gradient(ellipse at 85% 90%,rgba(28,93,43,.65) 0 5%,transparent 5.5%),linear-gradient(135deg,#6da83b,#d6ee9e 42%,#a5d8e9);}
+.auth-art{min-height:0;height:91.6vh;border-radius:13px;padding:clamp(22px,3vw,42px);background-image:linear-gradient(180deg,rgba(0,48,31,.28),rgba(0,39,25,.05) 38%,rgba(0,30,20,.72)),url('farm-hero.jpg');background-size:cover;background-position:center;box-shadow:0 14px 40px rgba(0,42,26,.16);}
+.auth-art:before{width:260px;height:260px;right:-100px;bottom:6%;border-color:rgba(231,255,225,.23);box-shadow:0 0 0 25px rgba(255,255,255,.06),0 0 0 52px rgba(255,255,255,.04)}
+.auth-art:after{width:100px;height:100px;right:12%;bottom:15%;background:rgba(122,230,144,.13);border-color:rgba(255,255,255,.15)}
+.auth-brand>span{width:38px;height:38px;border-radius:50%;background:#f5fff5;color:#087653;font-size:21px}
+.auth-brand{font-size:18px;text-shadow:0 1px 12px rgba(0,0,0,.2)}
+.auth-message{max-width:450px;margin:auto 0;text-shadow:0 2px 16px rgba(0,0,0,.24)}
+.auth-kicker{color:#d6ffe1;letter-spacing:1.5px}
+.auth-message h1{font-size:clamp(30px,3.2vw,48px);letter-spacing:-1.5px;margin:14px 0}
+.auth-message h1 em{color:#b8ffbf}
+.auth-message p{color:#f0fff4;font-size:13px;line-height:1.75;max-width:340px}
+.auth-benefits{gap:7px;margin-top:20px}
+.auth-benefits span{padding:8px 10px;font-size:10px;background:rgba(0,42,27,.25);border-color:rgba(255,255,255,.28);backdrop-filter:blur(8px)}
+.auth-footer{color:#effff2;font-size:11px;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.auth-panel{height:91.6vh;min-height:0;padding:clamp(24px,5vw,78px);background:#fff;border-radius:13px;box-shadow:0 14px 40px rgba(0,42,26,.12)}
+.auth-card{width:min(100%,390px);margin:auto}
+.auth-tabs{background:transparent;border-bottom:1px solid #e9efeb;border-radius:0;padding:0;gap:22px;margin-bottom:36px}
+.auth-tab{flex:0 0 auto;border-radius:0;padding:10px 0 13px;color:#85938a;font-size:12px;border-bottom:2px solid transparent}
+.auth-tab.active{background:transparent;color:#087653;box-shadow:none;border-bottom-color:#11975c}
+.auth-card h2{font-size:clamp(24px,2.3vw,32px);font-weight:700;letter-spacing:-.8px;color:#142d25;margin-bottom:8px}
+.auth-subtitle{font-size:12px;line-height:1.7;margin-bottom:25px;color:#87928b}
+.auth-form{gap:15px}
+.auth-form label{gap:7px;font-size:11px;color:#334a3e}
+.auth-form input{border-radius:5px;padding:12px 11px;font-size:12px;background:#fff;border-color:#e0e7e2}
+.auth-submit{border-radius:5px;padding:12px 14px;background:#0d9955;font-size:12px;box-shadow:none;margin-top:3px}
+.auth-submit:hover{background:#087747}
+.auth-switch-copy{text-align:left;margin-top:20px;font-size:11px;color:#7e8b83}
+.auth-switch-copy button{font-size:11px}
+.auth-demo-note{font-size:9px;color:#87958c;border-top:0;margin-top:24px;padding-top:0}
+.auth-copyright{font-size:9px;color:#9aa59e;margin-top:22px}
+.auth-mobile-brand{display:none}
+@media(max-width:800px){.auth-screen{grid-template-columns:1fr;padding:14px;background-image:linear-gradient(135deg,#78b44b,#d6eea4 45%,#a5d8e9);gap:10px}.auth-art{display:flex;height:auto;min-height:210px;padding:20px;border-radius:11px;background-position:center 54%}.auth-art .auth-brand{font-size:15px}.auth-art .auth-brand>span{width:32px;height:32px}.auth-message{margin:25px 0 18px}.auth-message h1{font-size:29px;margin:9px 0}.auth-message p{font-size:11px;line-height:1.55;margin-bottom:0}.auth-benefits{margin-top:12px}.auth-benefits span{font-size:9px;padding:6px 8px}.auth-footer{font-size:9px}.auth-panel{height:auto;min-height:0;padding:25px 22px;border-radius:11px}.auth-card{width:100%;max-width:420px}.auth-tabs{margin-bottom:23px}.auth-demo-note{margin-top:19px}.auth-copyright{margin-top:14px}}
+@media(prefers-reduced-motion:reduce){.auth-screen *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Use the exact left-side artwork cropped from the reference image supplied by the user. */
+.auth-art{background:#fff url('reference-login-art.webp') center center/100% 100% no-repeat!important;padding:0!important;box-shadow:0 14px 40px rgba(0,42,26,.16);}
+.auth-art:before,.auth-art:after{display:none!important;content:none!important;}
+.auth-art>.auth-brand,.auth-art>.auth-message,.auth-art>.auth-footer{display:none!important;}
+@media(max-width:800px){
+  .auth-screen{grid-template-columns:1fr;gap:8px;padding:12px;background:#b7e3a1;}
+  .auth-art{display:block!important;height:230px;min-height:230px;border-radius:12px;background-size:cover!important;background-position:center 44%!important;}
+  .auth-panel{height:auto;min-height:calc(100vh - 266px);padding:24px 20px;border-radius:12px;}
+  .auth-mobile-brand{display:none!important;}
+  .auth-card{margin:auto 0;}
+}
+/* Weather & crop-advisory extension */
+.weather-location-panel{margin-bottom:14px}.weather-input-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:13px;align-items:end}.weather-input-grid>label{display:grid;gap:7px;font-size:10px;color:#617066;font-weight:700}.weather-input-grid input,.weather-input-grid select{width:100%;min-width:0;border:1px solid #dfe7df;border-radius:8px;padding:11px 10px;background:#fff;color:#33483a;font-size:11px}.weather-input-grid #weather-find-place{min-height:37px}.coordinate-details{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;font-size:10px;color:#5d7462}.coordinate-details summary{cursor:pointer;font-weight:700}.coordinate-details .coordinate-fields{margin-top:12px}.field-help{font-size:9px;color:var(--muted);line-height:1.6}.weather-metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:13px}.weather-metric{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}.weather-metric small,.weather-metric b{display:block}.weather-metric small{font-size:9px;color:var(--muted);margin-bottom:8px}.weather-metric b{font-size:14px;color:#285d3e}.weather-subpanel{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px}.weather-subpanel h3{font:700 13px Manrope,sans-serif;margin:0}.weather-subpanel .panel-heading{margin-bottom:13px}.weather-subpanel .panel-heading p{font-size:10px;color:var(--muted);margin:5px 0 0}.weather-advisory-list{display:grid;gap:8px}.weather-advisory-note,.weather-action-note{display:flex;gap:10px;align-items:flex-start;border-radius:9px;padding:11px 12px;background:#f7f9f6}.weather-advisory-note>span,.weather-action-note>span{display:grid;place-items:center;flex:none;width:22px;height:22px;border-radius:7px;background:#e8f2e8;color:var(--green);font-size:11px;font-weight:800}.weather-advisory-note p,.weather-action-note p{font-size:10px;line-height:1.65;color:#5d6d61;margin:2px 0 0}.weather-action-note{background:#f2f7f1}.hourly-weather-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.hourly-weather-card{border:1px solid #e8ede7;border-radius:9px;padding:11px;display:grid;gap:7px;min-width:0}.hourly-weather-card small{font-size:9px;color:var(--muted);line-height:1.5}.hourly-weather-card b{font-size:14px;color:#285d3e}.hourly-weather-card span{font-size:9px;color:#607167;line-height:1.4}.weather-seven-day{grid-template-columns:repeat(4,minmax(0,1fr))}.weather-seven-day .forecast-card{min-width:0}.weather-advice h4{margin:9px 0 0;font:700 13px Manrope,sans-serif;color:#8a672a}.weather-advice small{font-size:9px;color:var(--muted);line-height:1.5}@media(max-width:980px){.weather-input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.weather-seven-day{grid-template-columns:repeat(3,minmax(0,1fr))}.hourly-weather-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:560px){.weather-input-grid{grid-template-columns:1fr}.weather-metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.weather-seven-day{grid-template-columns:repeat(2,minmax(0,1fr))}.hourly-weather-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.weather-subpanel{padding:13px}.weather-advice{padding:17px}}
+
+/* Botanical page-opening decoration: subtle leaf sprigs on every workspace page. */
+.view{position:relative;isolation:isolate;overflow:visible}
+.view::before,.view::after{content:"";position:absolute;z-index:-1;pointer-events:none;width:128px;height:154px;background-repeat:no-repeat;background-size:contain;opacity:.34;transform-origin:center;animation:leaf-arrive .85s cubic-bezier(.2,.7,.25,1) both}
+.view::before{top:8px;right:-17px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 170' fill='none'%3E%3Cpath d='M18 154C50 118 75 75 112 15' stroke='%23216d4a' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M44 119C17 115 7 96 12 78C32 79 48 92 44 119Z' fill='%236fae70'/%3E%3Cpath d='M58 94C52 68 66 48 88 42C94 65 79 86 58 94Z' fill='%2388bf78'/%3E%3Cpath d='M77 64C54 51 51 30 64 12C85 25 89 46 77 64Z' fill='%233f9159'/%3E%3Cpath d='M29 139C10 135 1 120 5 106C22 109 33 122 29 139Z' fill='%2398c982'/%3E%3Cpath d='M88 42C103 42 111 34 116 20M44 119L27 97M58 94L68 65M77 64L69 39M29 139L20 123' stroke='%23216d4a' stroke-width='1.5'/%3E%3C/svg%3E")}
+.view::after{left:-28px;bottom:5px;width:100px;height:122px;opacity:.22;transform:rotate(180deg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 170' fill='none'%3E%3Cpath d='M18 154C50 118 75 75 112 15' stroke='%23216d4a' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M44 119C17 115 7 96 12 78C32 79 48 92 44 119Z' fill='%236fae70'/%3E%3Cpath d='M58 94C52 68 66 48 88 42C94 65 79 86 58 94Z' fill='%2388bf78'/%3E%3Cpath d='M77 64C54 51 51 30 64 12C85 25 89 46 77 64Z' fill='%233f9159'/%3E%3Cpath d='M29 139C10 135 1 120 5 106C22 109 33 122 29 139Z' fill='%2398c982'/%3E%3C/svg%3E");animation-delay:.12s}
+.view.active>*{position:relative}
+@keyframes leaf-arrive{from{opacity:0;translate:0 10px;rotate:-7deg}to{opacity:.34;translate:0 0;rotate:0}}
+.view::after{animation-name:leaf-arrive;animation-delay:.12s}
+@media(max-width:740px){.view::before{width:78px;height:96px;right:-8px;top:0;opacity:.22}.view::after{width:65px;height:80px;left:-10px;opacity:.14}}
+@media(prefers-reduced-motion:reduce){.view::before,.view::after{animation:none}}
+
+/* AI farming assistant usability refinements */
+.chat-clear{margin-left:auto;flex:none}.chat-header>div:nth-child(2){min-width:0}.chat-save-status{padding:0 20px 15px;margin:0;font-size:9px;line-height:1.6;color:var(--muted)}@media(max-width:560px){.chat-header{flex-wrap:wrap}.chat-clear{margin-left:auto}.chat-messages{padding:15px;max-height:55vh}.suggested-prompts{padding:12px 15px 0}.chat-input{padding:13px 15px 10px}}
+
+/* Nearby agri-shop finder: GPS controls remain readable on desktop and mobile. */
+.shop-location-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:4px 0}
+.shop-location-controls .field-help{flex:1;min-width:220px;margin:0;color:var(--muted,#64748b);font-size:.86rem;line-height:1.45}
+@media(max-width:620px){.shop-location-controls{align-items:stretch;flex-direction:column}.shop-location-controls .outline-btn{width:100%}.shop-location-controls .field-help{min-width:0}}
+
+/* Crop recovery tracker usability and responsive summaries */
+.recovery-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 18px}
+.recovery-summary>div{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff;box-shadow:0 4px 14px rgba(17,65,43,.035)}
+.recovery-summary small,.recovery-summary b{display:block}.recovery-summary small{font-size:10px;color:var(--muted);line-height:1.5}.recovery-summary b{font-size:24px;color:var(--green-dark);margin-top:5px}
+.recovery-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.recovery-filter-label{display:grid;gap:7px;font-size:11px;font-weight:700;color:var(--muted);margin:0 0 13px}.recovery-filter-label select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px;background:#fff;color:var(--ink);font:inherit}.recovery-card{padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff}.recovery-card>p{font-size:11px;line-height:1.65;color:var(--muted);overflow-wrap:anywhere}.recovery-card-actions{display:flex;justify-content:flex-end;margin-top:10px}.recovery-card-actions .outline-btn{font-size:10px;padding:8px 10px}.recovery-card .decision-card-top{gap:8px;flex-wrap:wrap}
+@media(max-width:740px){.recovery-summary{gap:8px}.recovery-summary>div{padding:11px}.recovery-summary small{font-size:9px}.recovery-summary b{font-size:20px}.recovery-actions{gap:6px}.recovery-actions .text-btn{font-size:10px}}
+
+/* Smart farm calendar usability improvements */
+.calendar-filters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}.calendar-filters label{display:grid;gap:6px;font-size:10px;font-weight:700;color:var(--muted)}.calendar-filters label:last-child{grid-column:1/-1}.calendar-filters input,.calendar-filters select{width:100%;min-width:0;border:1px solid var(--line);border-radius:9px;background:#fff;padding:10px;font:inherit;color:var(--ink)}.calendar-task-actions{display:flex;gap:8px;flex-wrap:wrap}.calendar-task-complete{opacity:.78}.calendar-task-complete h4{text-decoration:line-through;color:var(--muted)}.calendar-state{font-size:10px}.calendar-state.overdue{color:#b53c2b}.calendar-state.today{color:#946400}.calendar-state.completed{color:#087653}.calendar-state.upcoming{color:#426f9a}
+@media(max-width:740px){.calendar-filters{grid-template-columns:1fr}.calendar-filters label:last-child{grid-column:auto}}
+
+/* Government schemes & expert help: source-first directory */
+.scheme-help-banner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px;border-radius:13px;background:#e9f3e8;border:1px solid #dcebdc;margin-bottom:14px}.scheme-help-banner h3{font:700 18px Manrope,sans-serif;margin:7px 0;color:#214f36}.scheme-help-banner p{max-width:620px;font-size:11px;line-height:1.7;color:#647968;margin:0}.scheme-contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:25px}.scheme-contact-card{display:flex;gap:12px;padding:17px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}.scheme-contact-icon{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:10px;background:#edf5eb;color:var(--green);font-size:18px}.scheme-contact-card small{font-size:8px;letter-spacing:.7px;font-weight:800;color:#718278}.scheme-contact-card h4{font:800 17px Manrope,sans-serif;margin:7px 0;color:#254d36}.scheme-contact-card p,.scheme-directory-card p{font-size:10px;line-height:1.7;color:#758178;margin:0 0 12px}.scheme-contact-card a,.scheme-directory-card a{font-size:10px;font-weight:800;color:var(--green);text-decoration:none}.scheme-contact-card a:hover,.scheme-directory-card a:hover{text-decoration:underline}.scheme-directory-heading{margin:26px 0 13px}.scheme-directory-heading h3{font:700 16px Manrope,sans-serif;margin:0}.scheme-directory-heading p{font-size:11px;color:var(--muted);margin:5px 0 0}.scheme-directory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}.scheme-directory-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}.scheme-card-top{display:flex;align-items:center;gap:9px;margin-bottom:14px}.scheme-card-top>span{display:grid;place-items:center;width:32px;height:32px;background:#edf5eb;color:var(--green);border-radius:9px;font-size:17px}.scheme-card-top small{font-size:8px;letter-spacing:.6px;font-weight:800;color:#7d8b80}.scheme-directory-card h4{font:700 13px/1.45 Manrope,sans-serif;margin:0 0 8px;color:#2d4c37}.scheme-directory-card p{flex:1}.scheme-location-grid{margin-top:18px}.scheme-location-grid .panel{min-width:0}@media(max-width:1150px){.scheme-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.scheme-contact-grid{grid-template-columns:1fr}}@media(max-width:740px){.scheme-help-banner{align-items:flex-start;flex-direction:column;padding:18px}.scheme-help-banner .primary-btn{width:100%}.scheme-directory-grid{grid-template-columns:1fr}.scheme-contact-card{padding:14px}.scheme-contact-card h4{font-size:16px}}
+
+/* Tool-calling farm agent proposal card */
+.agent-proposal{margin-top:14px;padding:14px;border:1px solid #b8d9bd;border-radius:14px;background:#f3faf3;color:#1c3524;display:grid;gap:8px}
+.agent-proposal p{margin:0;line-height:1.5;font-size:.92rem}
+.agent-proposal .primary-btn{justify-self:start;border:0;cursor:pointer}
+.agent-proposal .primary-btn:disabled{opacity:.7;cursor:default}
